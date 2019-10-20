@@ -9,6 +9,8 @@
 import UIKit
 
 class CalendarViewController: UIViewController {
+    
+    var calendarVM = CalendarViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

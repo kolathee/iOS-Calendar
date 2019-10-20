@@ -9,13 +9,24 @@
 import UIKit
 
 class DateTableViewCell: UITableViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        
+    }
+   
+    @IBAction func dropViewButton(_ sender: Any) {
+        
     }
 
 }

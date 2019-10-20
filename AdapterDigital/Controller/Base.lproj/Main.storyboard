@@ -118,6 +118,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="ส่งคำขอ"/>
+                                        <connections>
+                                            <action selector="requestButtonTapped:" destination="wZg-Ku-Ebl" eventType="touchUpInside" id="acl-S5-69G"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -161,6 +164,9 @@
                                                         <state key="normal" backgroundImage="calendar.badge.plus" catalog="system">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="calendarButtonTapped:" destination="wZg-Ku-Ebl" eventType="touchUpInside" id="cwl-4p-Yq6"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -187,6 +193,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="เพิ่มรายการ"/>
+                                                <connections>
+                                                    <action selector="addDatesButtonTapped:" destination="wZg-Ku-Ebl" eventType="touchUpInside" id="WSD-Zm-uQJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -251,6 +260,9 @@
                                                             <state key="normal" title="ลบ">
                                                                 <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="deleteButtonTapped:" destination="81v-7m-Sak" eventType="touchUpInside" id="sor-Sn-c9F"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4y-SC-Lgx">
                                                             <rect key="frame" x="176" y="9" width="120" height="40"/>
@@ -263,6 +275,9 @@
                                                             <state key="normal" title="เต็มวัน" image="arrowtriangle.down.fill" catalog="system">
                                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="dropViewButton:" destination="81v-7m-Sak" eventType="touchUpInside" id="si4-A8-Qiw"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -274,6 +289,9 @@
                                                         <constraint firstItem="ilG-1J-vW8" firstAttribute="centerY" secondItem="6aE-FI-ilJ" secondAttribute="centerY" id="Yfg-o0-xBX"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="dateLabel" destination="ilG-1J-vW8" id="d8g-FQ-eh4"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -314,6 +332,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E6J-gZ-cRU"/>
                     </view>
+                    <connections>
+                        <outlet property="addDatesButton" destination="1ft-kC-gZV" id="0Q3-XS-uga"/>
+                        <outlet property="numberOfDaysoffLabel" destination="hsd-0s-6Dq" id="mun-i9-4C7"/>
+                        <outlet property="numberOfRemainingDaysLabel" destination="tOQ-RH-t3C" id="UA7-0N-x5F"/>
+                        <outlet property="requestButton" destination="tty-Kd-U0i" id="1kY-eI-pOY"/>
+                        <outlet property="selectedDatesTextView" destination="WD7-Pv-Ymd" id="Lmx-1c-vET"/>
+                        <outlet property="tableView" destination="d1E-7J-0hn" id="0hd-KX-we2"/>
+                        <outlet property="userNameLabel" destination="Y9i-ou-PF2" id="O6H-5E-t98"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flo-sD-RGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
