@@ -29,7 +29,33 @@ class HomeViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewModel()
+        setupTableView()
+        setupUI()
     }
+    
+    func setupViewModel() {
+    }
+    
+    func setupTableView() {
+       tableView.rowHeight = 50
+    }
+    
+    func setupUI() {
+        userNameLabel.text = homeVM.userFullName
+        
+        addDatesButton.isEnabled = false
+        requestButton.isEnabled = false
+        selectedDatesTextView.isEditable = false
+        
+        selectedDatesTextView.addBorder()
+        selectedDatesTextView.rounded(radius: 5.0)
+        
+        requestButton.addBorder()
+        requestButton.rounded(radius: 5.0)
+    }
+    
+    
 
 // MARK: - Actions
         
