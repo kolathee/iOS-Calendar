@@ -8,9 +8,17 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
+    
+    static let shared = HomeViewController()
+    
+    /// Overide these properties in subclasses
+    override var storyboardName: String { "Main" }
+    override var identifier: String { "homeViewController" }
 
+    /// ViewModel & Data
     let homeVM = HomeViewModel()
+
         
 // MARK: - Outlets
 
@@ -35,6 +43,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupViewModel() {
+        
     }
     
     func setupTableView() {
@@ -54,13 +63,14 @@ class HomeViewController: UIViewController {
         requestButton.addBorder()
         requestButton.rounded(radius: 5.0)
     }
-    
-    
 
 // MARK: - Actions
         
     @IBAction func calendarButtonTapped(_ sender: Any) {
-        
+        let calendarVC = CalendarViewController.shared.initiateView() as! CalendarViewController
+        calendarVC.calendarVM.daysOff = homeVM.daysOff
+        calendarVC.delegate = self
+        self.present(calendarVC, animated: true, completion: nil)
     }
     
     @IBAction func addDatesButtonTapped(_ sender: Any) {
@@ -71,4 +81,15 @@ class HomeViewController: UIViewController {
         
     }
 
+}
+
+extension HomeViewController: CalendarVCDelegate {
+    
+    func showSelectedDates(selectedDates: [String : DayoffType]) {
+        homeVM.selectedDates = selectedDates
+        let text = homeVM.selectedDatesString
+        selectedDatesTextView.text = text
+        addDatesButton.isEnabled = text == "" ? false : true
+    }
+    
 }

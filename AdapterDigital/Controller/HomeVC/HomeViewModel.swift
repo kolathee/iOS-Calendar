@@ -8,6 +8,72 @@
 
 import Foundation
 
+protocol HomeViewModelDelegate {
+    func updateDaysOffAndTheRemaining(daysOff: Double, availableDays: Double)
+}
+
 class HomeViewModel {
+    
+    var delegate: HomeViewModelDelegate?
+    
+// MARK: - Values
+    
+    var userFullName = "นาย กลทีป์ พยุหวรรธนะ"
+    
+    let maxDaysOff = 10.0
+    
+    var daysOff: [String: DayoffType] = [:] {
+        didSet {
+            delegate?.updateDaysOffAndTheRemaining(daysOff: numberOfDayOffs, availableDays: availableDays)
+        }
+    }
+    var numberOfDayOffs: Double {
+        return calculateDays(daysOff)
+    }
+    
+    var selectedDates: [String: DayoffType] = [:]
+    var numberOfSelectedDays: Double { calculateDays(selectedDates) }
+    
+    var selectedDatesString: String {
+        var totalDates = ""
+        let lastDate = Array(selectedDates.keys).last
+        
+        for (date, _) in selectedDates {
+            print(date)
+            totalDates += "\(date)"
+            totalDates += (date != lastDate) ? ", " : ""
+        }
+        return totalDates
+    }
+    
+    var availableDays: Double {
+        return maxDaysOff - numberOfDayOffs
+    }
+    
+// MARK: - Functions
+    
+    func calculateDays(_ dates: [String: DayoffType]) -> Double {
+        var totalDays = 0.0
+        for type in dates.values {
+            switch type {
+            case .full_day:
+                totalDays += 1.0
+            case .half_day:
+                totalDays += 0.5
+            }
+        }
+        return totalDays
+    }
+    
+    func canAddMoreDaysOff() -> Bool {
+        if availableDays < numberOfSelectedDays { return false }
+        return true
+    }
+    
+    func confirmAdding() {
+        // selectedDays => daysOff
+        daysOff = daysOff.merging(selectedDates, uniquingKeysWith: { (current, _) in current })
+        selectedDates.removeAll()
+    }
     
 }

@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum DayoffType: String {
+    case full_day
+    case half_day
+}
+
 class CalendarViewModel {
     
+    var selectedDates: [String: DayoffType] = [:]
+    var daysOff: [String: DayoffType] = [:]
 }
