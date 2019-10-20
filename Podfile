@@ -10,7 +10,7 @@ target 'AdapterDigital' do
 	pod 'SwiftDate'
 	pod 'DropDown'
 	pod 'SwiftyJSON'
-	pod 'Presentr'
+	pod 'PopupDialog'
 
   target 'AdapterDigitalTests' do
     inherit! :search_paths

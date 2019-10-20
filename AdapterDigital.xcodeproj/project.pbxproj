@@ -22,6 +22,7 @@
 		A4B7C385235C9DEE00EF773F /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B7C384235C9DEE00EF773F /* DateTableViewCell.swift */; };
 		A4B7C387235CBF6200EF773F /* +UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B7C386235CBF6200EF773F /* +UIView.swift */; };
 		A4B7C38B235CC34100EF773F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B7C38A235CC34100EF773F /* BaseViewController.swift */; };
+		A4B7C38D235CD00A00EF773F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B7C38C235CD00A00EF773F /* Alert.swift */; };
 		AAFAD6AA2C920C0CA5B09473 /* Pods_AdapterDigitalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B661653F3ABE27C2C087E60 /* Pods_AdapterDigitalTests.framework */; };
 		C803C8043B0784E1F13E5EFE /* Pods_AdapterDigital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5364EE6A4EEB9B497DDC5BF /* Pods_AdapterDigital.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		A4B7C384235C9DEE00EF773F /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		A4B7C386235CBF6200EF773F /* +UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UIView.swift"; sourceTree = "<group>"; };
 		A4B7C38A235CC34100EF773F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A4B7C38C235CD00A00EF773F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C5364EE6A4EEB9B497DDC5BF /* Pods_AdapterDigital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdapterDigital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB255DB688C51CAC662B3892 /* Pods_AdapterDigitalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdapterDigitalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCB845A33348F88D7AAC565 /* Pods-AdapterDigital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdapterDigital.debug.xcconfig"; path = "Target Support Files/Pods-AdapterDigital/Pods-AdapterDigital.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		A4B7C375235C9D2A00EF773F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A4B7C38C235CD00A00EF773F /* Alert.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				A4B7C38B235CC34100EF773F /* BaseViewController.swift in Sources */,
 				A4B7C348235C9B9900EF773F /* SceneDelegate.swift in Sources */,
 				A4B7C37B235C9D8000EF773F /* HomeViewController.swift in Sources */,
+				A4B7C38D235CD00A00EF773F /* Alert.swift in Sources */,
 				A4B7C37F235C9D9A00EF773F /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
