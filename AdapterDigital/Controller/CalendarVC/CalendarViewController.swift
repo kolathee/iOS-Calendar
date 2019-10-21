@@ -75,10 +75,11 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-        let date = date.convertTo(region: .local).toString(.custom("dd/MM/yyyy"))
-        if calendarVM.daysOff[date] != nil {
-            return false
-        }
+        let dateStr = date.convertTo(region: .local).toString(.custom("dd/MM/yyyy"))
+        
+        guard calendarVM.daysOff[dateStr] == nil else { return false }
+        guard date > Date() else { return false }
+        
         return true
     }
     
