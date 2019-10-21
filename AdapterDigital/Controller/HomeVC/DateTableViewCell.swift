@@ -44,6 +44,7 @@ class DateTableViewCell: UITableViewCell {
     }
     
     func setupDropDown() {
+        dropDownView.imageView?.image = UIImage(named: "arrow_down")
         dropDownView.imageView?.tintColor = UIColor.black
         
         dropDownView.layer.cornerRadius = 5

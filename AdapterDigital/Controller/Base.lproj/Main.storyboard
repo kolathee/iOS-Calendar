@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wZg-Ku-Ebl">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -156,13 +157,13 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgI-xw-5mD">
-                                                        <rect key="frame" x="267" y="33.5" width="60" height="49.5"/>
+                                                        <rect key="frame" x="267" y="22" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="DVg-6S-iMB"/>
-                                                            <constraint firstAttribute="height" constant="50" id="yK9-JE-SQg"/>
+                                                            <constraint firstAttribute="height" constant="60" id="yK9-JE-SQg"/>
                                                         </constraints>
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" backgroundImage="calendar.badge.plus" catalog="system">
+                                                        <state key="normal" backgroundImage="calendar">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -271,9 +272,8 @@
                                                                 <constraint firstAttribute="width" constant="120" id="8X0-TP-Pjw"/>
                                                                 <constraint firstAttribute="height" constant="40" id="mRM-Bf-ozF"/>
                                                             </constraints>
-                                                            <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                            <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            <state key="normal" title="เต็มวัน" image="arrowtriangle.down.fill" catalog="system">
+                                                            <inset key="imageEdgeInsets" minX="55" minY="0.0" maxX="35" maxY="0.0"/>
+                                                            <state key="normal" title="เต็มวัน" image="arrow_down">
                                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
@@ -341,6 +341,7 @@
                     </view>
                     <connections>
                         <outlet property="addDatesButton" destination="1ft-kC-gZV" id="0Q3-XS-uga"/>
+                        <outlet property="calendarButton" destination="JgI-xw-5mD" id="fSp-wu-D6j"/>
                         <outlet property="numberOfDaysOffLabel" destination="hsd-0s-6Dq" id="DvC-3u-DsD"/>
                         <outlet property="numberOfRemainingDaysLabel" destination="tOQ-RH-t3C" id="UA7-0N-x5F"/>
                         <outlet property="requestButton" destination="tty-Kd-U0i" id="1kY-eI-pOY"/>
@@ -407,7 +408,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowtriangle.down.fill" catalog="system" width="64" height="60"/>
-        <image name="calendar.badge.plus" catalog="system" width="64" height="52"/>
+        <image name="arrow_down" width="512" height="512"/>
+        <image name="calendar" width="512" height="512"/>
     </resources>
 </document>

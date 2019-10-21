@@ -25,7 +25,7 @@ class BaseViewController: UIViewController {
     
     func initiateView() -> UIViewController {
         let storyBoard = UIStoryboard(name: storyboardName, bundle: nil)
-        return storyBoard.instantiateViewController(identifier: identifier)
+        return storyBoard.instantiateViewController(withIdentifier: identifier)
     }
     
 }

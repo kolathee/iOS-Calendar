@@ -24,6 +24,7 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var selectedDatesTextView: UITextView!
+    @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak var addDatesButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
@@ -55,6 +56,8 @@ class HomeViewController: BaseViewController {
         addDatesButton.isEnabled = false
         requestButton.isEnabled = false
         selectedDatesTextView.isEditable = false
+        
+        calendarButton.imageView?.image = UIImage(named: "calendar")
         
         selectedDatesTextView.addBorder()
         selectedDatesTextView.rounded(radius: 5.0)
