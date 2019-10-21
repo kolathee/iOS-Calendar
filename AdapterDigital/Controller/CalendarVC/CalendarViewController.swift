@@ -24,8 +24,11 @@ class CalendarViewController: BaseViewController {
     
     var delegate: CalendarVCDelegate?
     
-    /// ViewModel & Data
+// MARK: - ViewModel & Data
+    
     var calendarVM = CalendarViewModel()
+    
+// MARK: - Outlets
     
     @IBOutlet weak var calendar: FSCalendar!
     
@@ -40,7 +43,7 @@ class CalendarViewController: BaseViewController {
         calendar.allowsMultipleSelection = true
     }
     
-    // MARK: - Actions
+// MARK: - Actions
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         delegate?.showSelectedDates(selectedDates: calendarVM.selectedDates)
@@ -48,6 +51,8 @@ class CalendarViewController: BaseViewController {
     }
 
 }
+
+// MARK: - Calendar delegate, dataSource
 
 extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     

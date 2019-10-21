@@ -18,11 +18,15 @@ class DateTableViewCell: UITableViewCell {
     
     var delegate: DateTableViewCellDelegate?
     
+// MARK: - Outlets
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dropDownView: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
     var dropDown = DropDown()
+    
+// MARK: - Setup
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,14 +38,6 @@ class DateTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    @IBAction func dropViewButton(_ sender: Any) {
-        dropDown.show()
-    }
-    
-    @IBAction func deleteButtonTapped(_ sender: Any) {
-        delegate?.deleteButtonTapped(date: dateLabel.text!, indexPath: self.indexPath!)
-    }
-   
     func setupDeleteButton() {
         deleteButton.addBorder()
         deleteButton.rounded(radius: 5.0)
@@ -65,6 +61,16 @@ class DateTableViewCell: UITableViewCell {
             let dayOffType = item == "เต็มวัน" ? DayoffType.full_day: DayoffType.half_day
             self.delegate?.changeDayOffType(date: self.dateLabel.text!, type: dayOffType)
         }
+    }
+    
+// MARK: - Actions
+    
+    @IBAction func dropViewButton(_ sender: Any) {
+        dropDown.show()
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        delegate?.deleteButtonTapped(date: dateLabel.text!, indexPath: self.indexPath!)
     }
 
 }

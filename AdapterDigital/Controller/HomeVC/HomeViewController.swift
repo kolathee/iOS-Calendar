@@ -16,7 +16,8 @@ class HomeViewController: BaseViewController {
     override var storyboardName: String { "Main" }
     override var identifier: String { "homeViewController" }
 
-    /// ViewModel & Data
+// MARK: - ViewModel & Data
+    
     let homeVM = HomeViewModel()
         
 // MARK: - Outlets
@@ -93,17 +94,6 @@ class HomeViewController: BaseViewController {
 
 }
 
-extension HomeViewController: CalendarVCDelegate {
-    
-    func showSelectedDates(selectedDates: [String : DayoffType]) {
-        homeVM.selectedDates = selectedDates
-        let text = homeVM.selectedDatesString
-        selectedDatesTextView.text = text
-        addDatesButton.isEnabled = text == "" ? false : true
-    }
-    
-}
-
 // MARK: - TableView
 
 extension HomeViewController: UITableViewDataSource {
@@ -126,6 +116,8 @@ extension HomeViewController: UITableViewDataSource {
     }
     
 }
+
+// MARK: - TableView Cell
 
 extension HomeViewController: DateTableViewCellDelegate {
     
@@ -157,7 +149,20 @@ extension HomeViewController: DateTableViewCellDelegate {
     
 }
 
-// MARK: - VM binding
+// MARK: - Calendar delegate
+
+extension HomeViewController: CalendarVCDelegate {
+    
+    func showSelectedDates(selectedDates: [String : DayoffType]) {
+        homeVM.selectedDates = selectedDates
+        let text = homeVM.selectedDatesString
+        selectedDatesTextView.text = text
+        addDatesButton.isEnabled = text == "" ? false : true
+    }
+    
+}
+
+// MARK: - ViewModel delegate
 
 extension HomeViewController: HomeViewModelDelegate {
     

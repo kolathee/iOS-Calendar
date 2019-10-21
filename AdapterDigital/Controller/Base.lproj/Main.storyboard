@@ -378,8 +378,8 @@
                                     <constraint firstAttribute="height" constant="60" id="0RD-dP-4GO"/>
                                     <constraint firstAttribute="width" constant="92" id="mdH-Z5-W2h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Done">
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="ตกลง">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
