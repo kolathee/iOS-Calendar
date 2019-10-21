@@ -66,4 +66,20 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
         
     }
     
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        let date = date.convertTo(region: .local).toString(.custom("dd/MM/yyyy"))
+        if let type = calendarVM.daysOff[date] {
+            return type.rawValue == "full_day" ? "เต็มวัน" : "ครึ่งวัน"
+        }
+        return nil
+    }
+    
+    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+        let date = date.convertTo(region: .local).toString(.custom("dd/MM/yyyy"))
+        if calendarVM.daysOff[date] != nil {
+            return false
+        }
+        return true
+    }
+    
 }

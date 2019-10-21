@@ -74,7 +74,17 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func addDatesButtonTapped(_ sender: Any) {
+        guard homeVM.canAddMoreDaysOff() else {
+            let alert = Alert.error(title: "ลองใหม่อีกครั้ง", message: "วันลาคงเหลือไม่เพียงพอ", button: "ตกลง")
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         
+        homeVM.confirmAdding()
+        tableView.reloadData()
+        
+        selectedDatesTextView.text = ""
+        addDatesButton.isEnabled = false
     }
     
     @IBAction func requestButtonTapped(_ sender: Any) {

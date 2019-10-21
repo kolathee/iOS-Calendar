@@ -258,7 +258,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="ลบ">
-                                                                <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="deleteButtonTapped:" destination="81v-7m-Sak" eventType="touchUpInside" id="sor-Sn-c9F"/>
@@ -291,6 +291,8 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="ilG-1J-vW8" id="d8g-FQ-eh4"/>
+                                                    <outlet property="deleteButton" destination="jrv-uM-ntk" id="qFI-ky-FPM"/>
+                                                    <outlet property="dropDownView" destination="n4y-SC-Lgx" id="27M-gl-zsy"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
