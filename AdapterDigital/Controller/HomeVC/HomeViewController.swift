@@ -143,7 +143,14 @@ extension HomeViewController: DateTableViewCellDelegate {
     }
     
     func deleteButtonTapped(date: String, indexPath: IndexPath) {
-
+        let confirmPopup = Alert.delete(title: "ยืนยันการลบ",
+                                        message: "คุณต้องการลบวันที่ขอลา\nวันที่ \(date)\nใช่หรือไม่",
+                                        confirmBTText: "ใช่",
+                                        cancelBTText: "ไม่") {
+            self.homeVM.daysOff.removeValue(forKey: date)
+            self.tableView.deleteRows(at: [indexPath], with: .middle)
+        }
+        self.present(confirmPopup, animated: true, completion: nil)
     }
     
 }

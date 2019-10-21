@@ -39,7 +39,7 @@ class DateTableViewCell: UITableViewCell {
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        
+        delegate?.deleteButtonTapped(date: dateLabel.text!, indexPath: self.indexPath!)
     }
    
     func setupDeleteButton() {

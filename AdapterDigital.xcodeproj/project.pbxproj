@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48AD744D595037AAE37B5392 /* Pods_AdapterDigitalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB255DB688C51CAC662B3892 /* Pods_AdapterDigitalUITests.framework */; };
+		A491D572235D98A8004F97ED /* +UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491D571235D98A8004F97ED /* +UITableViewCell.swift */; };
 		A4B7C346235C9B9900EF773F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B7C345235C9B9900EF773F /* AppDelegate.swift */; };
 		A4B7C348235C9B9900EF773F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B7C347235C9B9900EF773F /* SceneDelegate.swift */; };
 		A4B7C34D235C9B9900EF773F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B7C34B235C9B9900EF773F /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		5B661653F3ABE27C2C087E60 /* Pods_AdapterDigitalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdapterDigitalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8111D1D1A429EE7D98C5CB03 /* Pods-AdapterDigital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdapterDigital.release.xcconfig"; path = "Target Support Files/Pods-AdapterDigital/Pods-AdapterDigital.release.xcconfig"; sourceTree = "<group>"; };
 		834343D92ACE066A5C60434F /* Pods-AdapterDigitalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdapterDigitalUITests.release.xcconfig"; path = "Target Support Files/Pods-AdapterDigitalUITests/Pods-AdapterDigitalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A491D571235D98A8004F97ED /* +UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UITableViewCell.swift"; sourceTree = "<group>"; };
 		A4B7C342235C9B9900EF773F /* AdapterDigital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdapterDigital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B7C345235C9B9900EF773F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B7C347235C9B9900EF773F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B7C386235CBF6200EF773F /* +UIView.swift */,
+				A491D571235D98A8004F97ED /* +UITableViewCell.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				A4B7C348235C9B9900EF773F /* SceneDelegate.swift in Sources */,
 				A4B7C37B235C9D8000EF773F /* HomeViewController.swift in Sources */,
 				A4B7C38D235CD00A00EF773F /* Alert.swift in Sources */,
+				A491D572235D98A8004F97ED /* +UITableViewCell.swift in Sources */,
 				A4B7C37F235C9D9A00EF773F /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
