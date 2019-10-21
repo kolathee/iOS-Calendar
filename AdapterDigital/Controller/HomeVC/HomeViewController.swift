@@ -18,7 +18,6 @@ class HomeViewController: BaseViewController {
 
     /// ViewModel & Data
     let homeVM = HomeViewModel()
-
         
 // MARK: - Outlets
 
@@ -28,10 +27,9 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var numberOfDaysoffLabel: UILabel!
+    @IBOutlet weak var numberOfDaysOffLabel: UILabel!
     @IBOutlet weak var numberOfRemainingDaysLabel: UILabel!
     @IBOutlet weak var requestButton: UIButton!
-        
        
 // MARK: - Setup
         
@@ -43,7 +41,7 @@ class HomeViewController: BaseViewController {
     }
     
     func setupViewModel() {
-        
+        homeVM.delegate = self
     }
     
     func setupTableView() {
@@ -100,6 +98,54 @@ extension HomeViewController: CalendarVCDelegate {
         let text = homeVM.selectedDatesString
         selectedDatesTextView.text = text
         addDatesButton.isEnabled = text == "" ? false : true
+    }
+    
+}
+
+// MARK: - TableView
+
+extension HomeViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return homeVM.daysOff.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dateTableViewCell", for: indexPath) as! DateTableViewCell
+        
+        let date = Array(homeVM.daysOff.keys)[indexPath.row]
+        let type = homeVM.daysOff[date]?.rawValue == "full_day" ? "เต็มวัน" : "ครึ่งวัน"
+        
+        cell.dateLabel.text = date
+        cell.dropDownView.setTitle(type, for: .normal)
+        cell.delegate = self
+        
+        return cell
+    }
+    
+}
+
+extension HomeViewController: DateTableViewCellDelegate {
+    
+    func changeDayOffType(date: String, type: DayoffType) {
+        
+    }
+    
+    func deleteButtonTapped(date: String, indexPath: IndexPath) {
+        
+    }
+    
+}
+
+// MARK: - VM binding
+
+extension HomeViewController: HomeViewModelDelegate {
+    
+    func updateDaysOffAndTheRemaining(daysOff: Double, availableDays: Double) {
+        numberOfDaysOffLabel.text = "\(daysOff) วัน"
+        numberOfRemainingDaysLabel.text = "\(availableDays) วัน"
+        
+        requestButton.isEnabled = daysOff == 0 ? false : true
     }
     
 }

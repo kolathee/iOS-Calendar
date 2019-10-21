@@ -258,7 +258,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="ลบ">
-                                                                <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="deleteButtonTapped:" destination="81v-7m-Sak" eventType="touchUpInside" id="sor-Sn-c9F"/>
@@ -296,6 +296,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="wZg-Ku-Ebl" id="VDR-H6-TEm"/>
+                                            <outlet property="delegate" destination="wZg-Ku-Ebl" id="yZj-Et-DZf"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -336,7 +340,7 @@
                     </view>
                     <connections>
                         <outlet property="addDatesButton" destination="1ft-kC-gZV" id="0Q3-XS-uga"/>
-                        <outlet property="numberOfDaysoffLabel" destination="hsd-0s-6Dq" id="mun-i9-4C7"/>
+                        <outlet property="numberOfDaysOffLabel" destination="hsd-0s-6Dq" id="DvC-3u-DsD"/>
                         <outlet property="numberOfRemainingDaysLabel" destination="tOQ-RH-t3C" id="UA7-0N-x5F"/>
                         <outlet property="requestButton" destination="tty-Kd-U0i" id="1kY-eI-pOY"/>
                         <outlet property="selectedDatesTextView" destination="WD7-Pv-Ymd" id="Lmx-1c-vET"/>
