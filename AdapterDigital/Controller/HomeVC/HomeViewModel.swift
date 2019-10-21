@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 protocol HomeViewModelDelegate {
     func updateDaysOffAndTheRemaining(daysOff: Double, availableDays: Double)
@@ -39,7 +40,6 @@ class HomeViewModel {
         let lastDate = Array(selectedDates.keys).last
         
         for (date, _) in selectedDates {
-            print(date)
             totalDates += "\(date)"
             totalDates += (date != lastDate) ? ", " : ""
         }
@@ -75,5 +75,22 @@ class HomeViewModel {
         daysOff = daysOff.merging(selectedDates, uniquingKeysWith: { (current, _) in current })
         selectedDates.removeAll()
     }
-    
+
+// MARK: - Networking
+
+    func sendDaysOffRequest() -> JSON {
+        let user = ["name" : userFullName]
+        var detail = [[String : String]]()
+        
+        for (date, type) in daysOff {
+            let eachDay: [String : String] = ["date" : date,
+                                             "type" : type.rawValue]
+            detail.append(eachDay)
+        }
+        
+        let json: JSON = ["name" : user, "request_leave" : detail]
+        
+        return json
+    }
 }
+

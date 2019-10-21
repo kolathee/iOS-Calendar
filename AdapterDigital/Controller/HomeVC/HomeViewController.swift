@@ -86,7 +86,9 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func requestButtonTapped(_ sender: Any) {
-        
+        let json = homeVM.sendDaysOffRequest()
+        let alert = Alert.error(title: "JSON Request", message: json.description, button: "Done")
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
