@@ -128,11 +128,22 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: DateTableViewCellDelegate {
     
     func changeDayOffType(date: String, type: DayoffType) {
-        
+        switch type {
+        case .full_day:
+            guard homeVM.availableDays >= 0.5 else {
+                let alert = Alert.error(title: "ลองใหม่อีกครั้ง", message: "วันลาคงเหลือไม่เพียงพอ", button: "ตกลง")
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+        default:
+            break
+        }
+        homeVM.daysOff[date] = type
+        tableView.reloadData()
     }
     
     func deleteButtonTapped(date: String, indexPath: IndexPath) {
-        
+
     }
     
 }
